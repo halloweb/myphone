@@ -4,7 +4,6 @@
     <search
     v-model="searchVal"
     position="absolute"
-    
     ref="search"> 
     </search>
     <swiper loop auto :list="img_list"  ></swiper>
@@ -29,7 +28,7 @@
     <card :header="{title:'商品详情'}" :footer="{title:'查看更多',link:'/component/panel'}">
       <p slot="content" class="card-padding">custom content</p>
     </card>
-    <footer-bar></footer-bar>
+    <footer-bar ></footer-bar>
   </div>
 </template>
 
@@ -96,9 +95,11 @@ export default {
       footer: {
         title: '查看更多',
         url: 'http://vux.li'
-      }
+      },
+      
     }
-  }
+  },
+ 
 }
 </script>
 
