@@ -4,6 +4,7 @@
     <search
     v-model="searchVal"
     position="absolute"
+    @on-submit="keySearch"
     ref="search"> 
     </search>
     <swiper loop auto :list="img_list"  ></swiper>
@@ -36,25 +37,20 @@
 import FooterBar from './commonParts/footer.vue'
 import { Swiper,SwiperItem,Panel,Grid, GridItem,Card,Search} from 'vux'
 const baseList = [{
-  url: 'javascript:',
+  url: '/article',
   img: 'https://static.vux.li/demo/1.jpg',
   title: '送你一朵fua'
 }, {
-  url: 'javascript:',
+  url: '/article',
   img: 'https://static.vux.li/demo/2.jpg',
   title: '送你一辆车'
 }, {
-  url: 'javascript:',
+  url: '/article',
   img: 'https://static.vux.li/demo/5.jpg',
   title: '送你一次旅行',
   fallbackImg: 'https://static.vux.li/demo/3.jpg'
 }]
-const urlList = baseList.map((item, index) => ({
-  url: 'http://m.baidu.com',
-  img: item.img,
-  fallbackImg: item.fallbackImg,
-  title: `(可点击)${item.title}`
-}))
+
 export default {
   components: {
     FooterBar,
@@ -70,7 +66,7 @@ export default {
   data () {
     return {
       searchVal:'',
-      img_list:urlList,
+      img_list:baseList,
       type: '5',
       list: [{
         src: 'http://somedomain.somdomain/x.jpg',
@@ -99,6 +95,11 @@ export default {
       
     }
   },
+  methods:{
+    keySearch(){
+      alert('aa');
+    }
+  }
  
 }
 </script>
